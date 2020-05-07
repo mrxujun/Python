@@ -82,7 +82,7 @@ def chooseBestFeature(dataset,labels):
 			bestFeatureIndex = i
 
 	return bestFeatureIndex
-
+#选取类别中样本最多的数据
 def mayorClass(classList):
 	labelCount = {}
 	for i in range(classList.size):
@@ -101,8 +101,8 @@ def createTree (dataset,labels):
 	bestFeatureIndex = chooseBestFeature(dataset, labels)
 	bestFeature = labels[bestFeatureIndex]#选取最优特征
 	dtree = {bestFeature:{}}#决策树的格式
-	featureList = dataset[:,bestFeatureIndex]
-	featureValues = set(featureList)
+	featureList = dataset[:,bestFeatureIndex]#最优特征的所有样本数据
+	featureValues = set(featureList)#集合中不允许重复
 	for value in featureValues:
 		subdataset = splitDataSet(dataset, bestFeatureIndex, value)
 		sublabels = np.delete(labels,bestFeatureIndex)#删除最优特征列
@@ -110,19 +110,21 @@ def createTree (dataset,labels):
 
 	return dtree
 
+# 单个样本进行 预测
 def predict(tree, labels, testData):
-	rootName = list(tree.keys())[0]
+	rootName = list(tree.keys())[0]#根节点
 	rootValue = tree[rootName]
 	featureIndex = list(labels).index(rootName)
 	classLabel = None
 	for key in rootValue.keys():
 		if testData[featureIndex] ==int(key):
-			if type(rootValue[key]).__name__=="dict":
+			if type(rootValue[key]).__name__=="dict":#字典格式进行递归
 				classLabel = predict(rootValue[key],labels, testData)
 			else:
 				classLabel = rootValue[key]
 	return classLabel
 
+#多个样本预测
 def predictAll(tree, labels,testSet):
 	classLabels = []
 	for i in testSet:

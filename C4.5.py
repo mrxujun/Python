@@ -52,7 +52,7 @@ def dataSet_entropy(dataSet):
 
 
 # 切分子集
-def splitDataSet(dataSet, featureIndex, value):
+def splitDataSet(dataset, featureIndex, value):
 	subdataset = []  # 划分后的子集
 
 	for example in dataset:
@@ -64,11 +64,13 @@ def splitDataSet(dataSet, featureIndex, value):
 # 选取最佳特征
 def chooseBestFeature(dataset, labels):
 	featureNum = labels.size  # 特征的个数
-	minEntropy, bestFeatureIndex = 1, None  # 最小熵值
+	baseEntropy = dataSet_entropy(dataset)
+	maxRatio, bestFeatureIndex = 0, None  # 最小熵值
 	n = dataset.shape[0]  # 样本的总数
 	for i in range(featureNum):
 		# 指定特征的条件熵
 		featureEntropy = 0
+		splitInfo = 0
 		# 返回所有子集
 
 		featureList = dataset[:, i]
@@ -77,11 +79,15 @@ def chooseBestFeature(dataset, labels):
 			subDataSet = splitDataSet(dataset, i, value)
 			# 条件信息熵
 			featureEntropy += subDataSet.shape[0] / n * dataSet_entropy(subDataSet)
+			# 分裂条件信息熵
+			splitInfo += -subDataSet.shape[0] / n * np.log2(subDataSet.shape[0] / n)
 
-		if minEntropy > featureEntropy:
-			minEntropy = featureEntropy
+		# 信息增益率
+		gainRatio = (baseEntropy - featureEntropy) / splitInfo
+
+		if gainRatio > maxRatio:
+			maxRatio = gainRatio
 			bestFeatureIndex = i
-
 	return bestFeatureIndex
 
 
@@ -140,3 +146,4 @@ if __name__ == "__main__":
 	tree = createTree(dataset, labels)
 	testSet = createTestSet()
 	print(predictAll(tree, labels, testSet))  # 对测试集进行测试
+

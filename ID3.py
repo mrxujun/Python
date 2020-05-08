@@ -5,7 +5,7 @@ import numpy as np
 
 def createDataSet():
 	# 天气数据集
-	# outlook:0：sunny/ 1:overcast/ 2:rain
+	# outlook:0：sunny// 1:overcast/ 2:rain
 	# temperature:0:hot/1:mild/ 2:cool
 	# humidity :0:high/ 1:normal
 	# windy : 0:false/ 1:true
@@ -52,7 +52,9 @@ def dataSet_entropy(dataSet):
 
 
 # 切分子集
+
 def splitDataSet(dataSet, featureIndex, value):
+
 	subdataset = []  # 划分后的子集
 
 	for example in dataset:
@@ -83,12 +85,9 @@ def chooseBestFeature(dataset, labels):
 			bestFeatureIndex = i
 
 	return bestFeatureIndex
-<<<<<<< HEAD
+
 #选取类别中样本最多的数据
-=======
 
-
->>>>>>> 决策树c4.5算法
 def mayorClass(classList):
 	labelCount = {}
 	for i in range(classList.size):
@@ -106,17 +105,17 @@ def createTree(dataset, labels):
 		return mayorClass(classList)
 	# 递归
 	bestFeatureIndex = chooseBestFeature(dataset, labels)
-<<<<<<< HEAD
+
 	bestFeature = labels[bestFeatureIndex]#选取最优特征
 	dtree = {bestFeature:{}}#决策树的格式
 	featureList = dataset[:,bestFeatureIndex]#最优特征的所有样本数据
 	featureValues = set(featureList)#集合中不允许重复
-=======
+
 	bestFeature = labels[bestFeatureIndex]  # 选取最优特征
 	dtree = {bestFeature: {}}  # 决策树的格式
 	featureList = dataset[:, bestFeatureIndex]
 	featureValues = set(featureList)
->>>>>>> 决策树c4.5算法
+
 	for value in featureValues:
 		subdataset = splitDataSet(dataset, bestFeatureIndex, value)
 		sublabels = np.delete(labels, bestFeatureIndex)  # 删除最优特征列
@@ -124,37 +123,36 @@ def createTree(dataset, labels):
 
 	return dtree
 
-<<<<<<< HEAD
-# 单个样本进行 预测
-=======
 
->>>>>>> 决策树c4.5算法
+# 单个样本进行 预测
+
 def predict(tree, labels, testData):
 	rootName = list(tree.keys())[0]#根节点
 	rootValue = tree[rootName]
 	featureIndex = list(labels).index(rootName)
 	classLabel = None
 	for key in rootValue.keys():
-<<<<<<< HEAD
+
 		if testData[featureIndex] ==int(key):
 			if type(rootValue[key]).__name__=="dict":#字典格式进行递归
 				classLabel = predict(rootValue[key],labels, testData)
-=======
+
 		if testData[featureIndex] == int(key):
 			if type(rootValue[key]).__name__ == "dict":
 				classLabel = predict(rootValue[key], labels, testData)
->>>>>>> 决策树c4.5算法
+
+		if testData[featureIndex] == int(key):
+			if type(rootValue[key]).__name__ == "dict":
+				classLabel = predict(rootValue[key], labels, testData)
+
 			else:
 				classLabel = rootValue[key]
 	return classLabel
 
-<<<<<<< HEAD
+
 #多个样本预测
-def predictAll(tree, labels,testSet):
-=======
 
 def predictAll(tree, labels, testSet):
->>>>>>> 决策树c4.5算法
 	classLabels = []
 	for i in testSet:
 		classLabels.append(predict(tree, labels, i))

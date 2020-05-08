@@ -1,5 +1,6 @@
 # y = theta0 + theta1*x
 import numpy as np
+import matplotlib.pyplot as plt
 X = [4, 8, 5, 10, 12]
 y = [20, 50, 30, 70, 60]
 
@@ -33,7 +34,8 @@ while True:
 	cnt +=1
 print(theta0, theta1, cnt)
 
-# 预测
+
+# # 预测
 def predict (theta0, theta1, x_test):
 	return theta0 + theta1*x_test
 

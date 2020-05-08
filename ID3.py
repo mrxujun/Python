@@ -52,7 +52,7 @@ def dataSet_entropy(dataSet):
 
 
 # 切分子集
-def splitDataSet(dataSet, featureIndex, value):
+def splitDataSet(dataset, featureIndex, value):
 	subdataset = []  # 划分后的子集
 
 	for example in dataset:

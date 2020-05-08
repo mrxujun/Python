@@ -2,7 +2,11 @@ import operator
 
 import numpy as np
 
-
+# 对ID3的改进
+# 1.用信息增益率代替信息增益
+# 2.能够完成对连续属性的离散化处理
+# 3.能处理缺失值的情况
+# 4.在决策树构造完成之后进行剪枝
 def createDataSet():
 	# 天气数据集
 	# outlook:0：sunny/ 1:overcast/ 2:rain

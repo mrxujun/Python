@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6926a602-9276-4ce4-86a7-4738c686d88a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Gradient_descent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gradient_descent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ID3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ID3.py" afterDir="false" />
-    </list>
+    <list default="true" id="6926a602-9276-4ce4-86a7-4738c686d88a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,17 +45,17 @@
   </component>
   <component name="RunManager" selected="Python.C4.5">
     <configuration name="C4.5" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="机器学习" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Program Files\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/C4.5.py" />
       <option name="PARAMETERS" value="" />
@@ -155,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588499628447</updated>
       <workItem from="1588499630634" duration="10536000" />
-      <workItem from="1588757735053" duration="33909000" />
+      <workItem from="1588757735053" duration="34668000" />
     </task>
     <servers />
   </component>
@@ -185,7 +182,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/C4.5.py</url>
-          <line>117</line>
+          <line>121</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
@@ -194,7 +191,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/$logic_regression.coverage" NAME="logic_regression Coverage Results" MODIFIED="1588598414044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/$Gradient_descent.coverage" NAME="Gradient_descent Coverage Results" MODIFIED="1588512994439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/$C4_5.coverage" NAME="C4.5 Coverage Results" MODIFIED="1588919700577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$C4_5.coverage" NAME="C4.5 Coverage Results" MODIFIED="1588930398052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/$ID3.coverage" NAME="ID3 Coverage Results" MODIFIED="1588919509266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
